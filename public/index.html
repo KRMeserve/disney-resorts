@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" ng-app="DisneyApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Disney Resorts</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+    <script src="js/app.js"></script>
   </head>
-  <body>
-    <h1>hello from index</h1>
+  <body ng-controller="DisneyController as ctrl">
+    <h1>Disney Resorts</h1>
+    {{ 2+2 }}
+    {{ ctrl.hello }}
+    <div class="container">
+        <ul>
+            <li> <a href="Resort Link Will Go Here!">Resort name will go here!</a></li>
+            <img src="#" alt="Resort Image will go here!">
+            <p>Resort Description will go here!</p>
+        </ul>
+    </div>
   </body>
 </html>
