@@ -1,0 +1,20 @@
+{
+  "name": "disney-resorts",
+  "version": "1.0.0",
+  "description": "Unit 3 Group Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KRMeserve/disney-resorts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KRMeserve/disney-resorts/issues"
+  },
+  "homepage": "https://github.com/KRMeserve/disney-resorts#readme"
+}
