@@ -30,5 +30,17 @@ app.controller('DisneyController', ['$http', function($http){
             console.log(error);
         })
     };
+
+    this.deleteResort = (resort) => {
+      $http({
+        method: 'DELETE',
+        url: '/resorts/' + resort._id
+      }).then(repsonse => {
+        this.getResorts();
+      }, error => {
+        console.log(error);
+      })
+    };
+
     this.getResorts();
 }]);
