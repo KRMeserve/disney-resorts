@@ -18,5 +18,13 @@
             <p>Resort Description will go here!</p>
         </ul>
     </div>
+    <div class="container">
+        <h3>Add A Resort</h3>
+        <form ng-submit="ctrl.addResort()">
+            Name: <input type="text" ng-model="ctrl.newTitle"><br>
+            URL: <input type="text" ng-model="ctrl.newUrl"><br>
+            <input type="submit" value="Add Resort">
+        </form>
+    </div>
   </body>
 </html>
