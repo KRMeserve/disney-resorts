@@ -17,7 +17,7 @@
                   <a href="{{ resort.url }}">{{ resort.title }}</a>
                   <span class="delete" ng-click="ctrl.deleteResort(resort)"> x </span>
                 </h3>
-                <img src="{{ resort.img }}" alt="Resort Image will go here!">
+                <img src="{{ resort.img }}" alt="{{ resort.title }} Picture">
                 <p>{{ resort.description }}</p>
                 <button class="editButton" ng-click="ctrl.toggleEdit()">EDIT RESORT</button>
                 <!-- Edit Form -->
