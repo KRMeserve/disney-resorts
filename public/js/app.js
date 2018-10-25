@@ -1,7 +1,8 @@
 const app = angular.module('DisneyApp', []);
 
 app.controller('DisneyController', ['$http', function($http){
-    this.hello = 'Hi';
+    // this.hello = 'Hi';
+    this.hideEdit = true;
 
     this.addResort = ()=>{
         $http({
@@ -10,7 +11,8 @@ app.controller('DisneyController', ['$http', function($http){
             data: {
                 title: this.newTitle,
                 url: this.newUrl,
-                img: this.newImg
+                img: this.newImg,
+                description: this.newDescription
             }
         }).then(response=>{
             this.getResorts();
@@ -42,5 +44,25 @@ app.controller('DisneyController', ['$http', function($http){
       })
     };
 
+    this.editResort = (resort) => {
+      $http({
+        method: 'PUT',
+        url: '/resorts/' + resort._id,
+        data: {
+          title: this.updatedTitle,
+          url: this.updatedUrl,
+          img: this.updatedImg,
+          description: this.updatedDescription
+        }
+      }).then(response => {
+        this.getResorts();
+      }, error => {
+        console.log(error);
+      })
+    };
+
+    this.toggleEdit= () => {
+        this.hideEdit = !this.hideEdit;
+      }
     this.getResorts();
 }]);
