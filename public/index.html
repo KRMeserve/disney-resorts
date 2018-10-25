@@ -15,7 +15,7 @@
         <div class="leftColumn">
             <div class="resort" ng-repeat="resort in ctrl.resorts">
                 <h3>
-                  <a href="{{ resort.url }}">{{ resort.title }}</a>
+                  <a href="{{ resort.url }}" class="title">{{ resort.title }}</a>
                   <span class="delete" ng-click="ctrl.deleteResort(resort)"> x </span>
                 </h3>
                 <img src="{{ resort.img }}" alt="{{ resort.title }} Picture">

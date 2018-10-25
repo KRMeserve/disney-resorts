@@ -89,3 +89,10 @@ button {
     align-self: center;
     margin: 0 auto;
 }
+.title {
+    color: black;
+    transition: .2s;
+}
+.title:hover {
+    color: #4a4f56;
+}
