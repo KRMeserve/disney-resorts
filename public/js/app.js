@@ -17,5 +17,18 @@ app.controller('DisneyController', ['$http', function($http){
         }, error=>{
             console.log(error);
         })
-    }
+    };
+
+    this.getResorts = ()=>{
+        $http({
+            method: 'GET',
+            url: '/resorts'
+        }).then(response=>{
+            console.log(response.data);
+            this.resorts = response.data
+        }, error=>{
+            console.log(error);
+        })
+    };
+    this.getResorts();
 }]);
