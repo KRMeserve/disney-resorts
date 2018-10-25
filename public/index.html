@@ -10,21 +10,40 @@
   <body ng-controller="DisneyController as ctrl">
     <h1>Disney Resorts</h1>
     <div class="Columns">
+      <!-- Display Resort -->
         <div class="leftColumn">
-            <div ng-repeat="resort in ctrl.resorts">
+            <div class="resort" ng-repeat="resort in ctrl.resorts">
                 <h3>
                   <a href="{{ resort.url }}">{{ resort.title }}</a>
                   <span class="delete" ng-click="ctrl.deleteResort(resort)"> x </span>
                 </h3>
                 <img src="{{ resort.img }}" alt="Resort Image will go here!">
                 <p>{{ resort.description }}</p>
+                <button class="editButton" ng-click="ctrl.toggleEdit()">EDIT RESORT</button>
+                <!-- Edit Form -->
+                <form ng-submit="ctrl.editResort(resort)">
+                  <li ng-hide="ctrl.hideEdit">
+                      Title: <br><input type="text" ng-model="ctrl.updatedTitle">
+                   </li><br>
+                  <li ng-hide="ctrl.hideEdit">
+                      Description: <br><input type="text" ng-model="ctrl.updatedDescription">
+                  </li><br>
+                  <li ng-hide="ctrl.hideEdit">
+                      URL: <br><input type="text" ng-model="ctrl.updatedUrl">
+                  </li><br>
+                  <li ng-hide="ctrl.hideEdit">
+                      Image Link: <br><input type="text" ng-model="ctrl.updatedImg">
+                  </li><br>
+                  <input ng-click="ctrl.toggleEdit()" ng-hide="ctrl.hideEdit" type="submit" value="Submit">
+              </form>
             </div>
         </div>
+        <!-- Add a Resort -->
         <div class="rightColumn">
             <h3>Add A Resort</h3>
             <form ng-submit="ctrl.addResort()">
                 Title: <br><input type="text" ng-model="ctrl.newTitle"><br>
-                Description: <br><input type="text" ng-model="ctrl.description"><br>
+                Description: <br><input type="text" ng-model="ctrl.newDescription"><br>
                 URL: <br><input type="text" ng-model="ctrl.newUrl"><br>
                 Image Link: <br><input type="text" ng-model="ctrl.newImg"><br>
                 <input type="submit" value="Submit">
