@@ -13,3 +13,20 @@ h1 {
     margin-top: 0;
     color: white;
 }
+.Columns {
+    display: flex;
+    justify-content: space-between;
+}
+.leftColumn {
+    width: 85%;
+    display: flex;
+}
+.leftColumn>div {
+    width: 40%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+}
+.leftColumn img {
+    width: 100%;
+}
