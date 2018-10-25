@@ -13,7 +13,7 @@ app.controller('DisneyController', ['$http', function($http){
                 img: this.newImg
             }
         }).then(response=>{
-            console.log(response);
+            this.getResorts();
         }, error=>{
             console.log(error);
         })

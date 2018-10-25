@@ -9,23 +9,23 @@
   </head>
   <body ng-controller="DisneyController as ctrl">
     <h1>Disney Resorts</h1>
-    {{ 2+2 }}
-    {{ ctrl.hello }}
-    <div class="container">
-        <ul>
-            <li> <a href="Resort Link Will Go Here!">Resort name will go here!</a></li>
-            <img src="#" alt="Resort Image will go here!">
-            <p>Resort Description will go here!</p>
-        </ul>
-    </div>
-    <div class="container">
-        <h3>Add A Resort</h3>
-        <form ng-submit="ctrl.addResort()">
-            Title: <input type="text" ng-model="ctrl.newTitle"><br>
-            URL: <input type="text" ng-model="ctrl.newUrl"><br>
-            Image Link: <input type="text" ng-model="ctrl.newImg"><br>
-            <input type="submit" value="Add Resort">
-        </form>
+    <div class="Columns">
+        <div class="leftColumn">
+            <div ng-repeat="resort in ctrl.resorts">
+                <h3><a href="{{ resort.url }}">{{ resort.title }}</a><h3>
+                <img src="{{ resort.img }}" alt="Resort Image will go here!">
+                <p>{{ resort.description }}</p>
+            </div>
+        </div>
+        <div class="rightColumn">
+            <h3>Add A Resort</h3>
+            <form ng-submit="ctrl.addResort()">
+                Title: <input type="text" ng-model="ctrl.newTitle"><br>
+                URL: <input type="text" ng-model="ctrl.newUrl"><br>
+                Image Link: <input type="text" ng-model="ctrl.newImg"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </div>
   </body>
 </html>
