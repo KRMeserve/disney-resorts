@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Disney Resorts</title>
+    <link rel="icon" type="image/png" href="/img/favicon.ico">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
     <script src="js/app.js"></script>
@@ -17,7 +18,7 @@
                   <a href="{{ resort.url }}">{{ resort.title }}</a>
                   <span class="delete" ng-click="ctrl.deleteResort(resort)"> x </span>
                 </h3>
-                <img src="{{ resort.img }}" alt="Resort Image will go here!">
+                <img src="{{ resort.img }}" alt="{{ resort.title }} Picture">
                 <p>{{ resort.description }}</p>
                 <button class="editButton" ng-click="ctrl.toggleEdit()">EDIT RESORT</button>
                 <!-- Edit Form -->

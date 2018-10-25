@@ -1,6 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Mali:400,700');
 body {
     text-align: center;
     background-color: lightblue;
+    margin: 0;
+    font-family: 'Mali', cursive;
 }
 h1 {
     height: 100px;
@@ -23,17 +26,17 @@ h1 {
     width: 85%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 .leftColumn>div {
     width: 45%;
     display: flex;
     flex-wrap: wrap;
-    padding: 2%;
 }
 .leftColumn img {
     width: 100%;
     margin: 0 auto;
-    max-height: 60%;
+    max-height: 40%;
 }
 .leftColumn>div>h3 {
     width: 100%;
@@ -44,7 +47,7 @@ h1 {
     margin: 0;
 }
 .delete {
-    padding: 10px 25px;
+    padding: 7px 25px;
     background-color: lightpink;
     text-transform: uppercase;
     border: 2px solid black;
@@ -66,6 +69,23 @@ h1 {
     font-size: 1.7em;
 }
 .rightColumn>form {
-    background-color: rgba(255,255,255,0.7);
+    background-color: rgba(255,255,255,0.6);
     padding: 15px;
+    border-radius: 4px;
+}
+button {
+    height: 25px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.resort {
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 4px;
+    padding: .5%;
+    margin: .5%;
+}
+.resort form {
+    align-self: center;
+    margin: 0 auto;
 }
