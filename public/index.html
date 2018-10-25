@@ -1,10 +1,55 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" ng-app="DisneyApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Disney Resorts</title>
+    <link rel="icon" type="image/png" href="/img/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.5/angular.min.js"></script>
+    <script src="js/app.js"></script>
   </head>
-  <body>
-    <h1>hello from index</h1>
+  <body ng-controller="DisneyController as ctrl">
+    <h1>Disney Resorts</h1>
+    <div class="Columns">
+      <!-- Display Resort -->
+        <div class="leftColumn">
+            <div class="resort" ng-repeat="resort in ctrl.resorts">
+                <h3>
+                  <a href="{{ resort.url }}" class="title">{{ resort.title }}</a>
+                  <span class="delete" ng-click="ctrl.deleteResort(resort)"> x </span>
+                </h3>
+                <img src="{{ resort.img }}" alt="{{ resort.title }} Picture">
+                <p>{{ resort.description }}</p>
+                <button class="editButton" ng-click="ctrl.toggleEdit()">EDIT RESORT</button>
+                <!-- Edit Form -->
+                <form ng-submit="ctrl.editResort(resort)">
+                  <li ng-hide="ctrl.hideEdit">
+                      Title: <br><input type="text" ng-model="ctrl.updatedTitle">
+                   </li><br>
+                  <li ng-hide="ctrl.hideEdit">
+                      Description: <br><input type="text" ng-model="ctrl.updatedDescription">
+                  </li><br>
+                  <li ng-hide="ctrl.hideEdit">
+                      URL: <br><input type="text" ng-model="ctrl.updatedUrl">
+                  </li><br>
+                  <li ng-hide="ctrl.hideEdit">
+                      Image Link: <br><input type="text" ng-model="ctrl.updatedImg">
+                  </li><br>
+                  <input ng-click="ctrl.toggleEdit()" ng-hide="ctrl.hideEdit" type="submit" value="Submit">
+              </form>
+            </div>
+        </div>
+        <!-- Add a Resort -->
+        <div class="rightColumn">
+            <h3>Add A Resort</h3>
+            <form ng-submit="ctrl.addResort()">
+                Title: <br><input type="text" ng-model="ctrl.newTitle"><br>
+                Description: <br><input type="text" ng-model="ctrl.newDescription"><br>
+                URL: <br><input type="text" ng-model="ctrl.newUrl"><br>
+                Image Link: <br><input type="text" ng-model="ctrl.newImg"><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
   </body>
 </html>
